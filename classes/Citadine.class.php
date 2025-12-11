@@ -2,9 +2,6 @@
     require_once "Vehicule.class.php";
 class Citadine extends Vehicule {
     private $autonomie ;
-
-    
-
     public function __construct(string $marque, string $modele, string $id, int $autonomie) {
 
         //appelle de la classe parenté et implementation des données   

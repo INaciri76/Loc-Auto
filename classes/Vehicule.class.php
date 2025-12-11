@@ -20,6 +20,6 @@ abstract class Vehicule {
     //Fonction qui retourne une chaine de caractere
     public function __tostring(): string  
     {
-        return "Marque : ". $this->marque . "<br>" . " Modele : "  . $this ->modele . "<br>" . "identifiant : " . $this -> id ;
+        return "<strong>".get_class($this)."</strong>  :" . "<br>" . "Marque : ". $this->marque . "<br>" . " Modele : "  . $this ->modele . "<br>" . "identifiant : " . $this -> id ;
     }
 }
