@@ -20,5 +20,17 @@ class Familiale extends Vehicule {
         return parent::__tostring() . "<br>" . "Nombres de personnes :  "  . $this->NBPersonne . " personnes ."; 
     }
 
+    public function getIdentifiant() : string {
+        return $this->$id;
+    }
 
+    public function getInfosCompletes() : string {
+    return "Marque : " . $this->marque 
+         . ", Modèle : " . $this->modele 
+         . ", Identifiant : " . $this->id 
+         . ", Nombre de personnes max : " . $this->NBPersonne;
 }
+
+}    
+
+

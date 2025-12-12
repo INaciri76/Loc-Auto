@@ -1,25 +1,32 @@
 <?php 
+require_once "Inventoriable.class.php";
 
-abstract class Vehicule {
+abstract class Vehicule extends Inventoriable{
+    
     protected $marque;
     protected $modele;
     protected $id;
 
-    //constructeur 
-    public function __construct(string $marque, string $modele, string $id) 
-    {
+    // Constructeur 
+    public function __construct(string $marque, string $modele, string $id) {
         $this->marque = $marque;
         $this->modele = $modele;
         $this->id = $id;
     }
 
-    //planifier une revision 
-    public abstract function PlanifierRevision();
 
+    // Méthode abstraite pour planifier une révision
+    public abstract function planifierRevision();
 
-    //Fonction qui retourne une chaine de caractere
-    public function __tostring(): string  
-    {
-        return "<strong>".get_class($this)."</strong>  :" . "<br>" . "Marque : ". $this->marque . "<br>" . " Modele : "  . $this ->modele . "<br>" . "identifiant : " . $this -> id ;
+    // Méthode abstraite pour obtenir l'identifiant
+    public abstract function getIdentifiant() : string;
+
+    // Méthode abstraite pour obtenir les infos complètes
+    public abstract function getInfosCompletes() : string;
+
+    // Affichage sous forme de chaîne
+    public function __toString(): string {
+        return "<strong>".get_class($this)."</strong> :" . "<br> Marque : ". $this->marque . "<br>Modèle : "  . $this->modele . "<br> Identifiant : " . $this->id;
     }
+
 }

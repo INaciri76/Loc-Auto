@@ -4,9 +4,6 @@ spl_autoload_register(function ($class) {
 });
 const RC = "<br>";
 
-
-
-
 //---------------TEST POUR CITADINE----------------
     $Citadine1 = new Citadine("Peugeot", "206", "CAR-76-76", 500);
     echo RC;
@@ -28,7 +25,7 @@ const RC = "<br>";
     echo RC;
     echo RC;
 
-        //-------- Tableau ENREGISTREMENT DES VEHICULES POUR PARC-----------
+//-------- Tableau ENREGISTREMENT DES VEHICULES POUR PARC-----------
         $tvehicule = array($Citadine1, $Utilitaire1,$Familiale1); //A modifier si un nouveau vehicule est ajouté 
 
         foreach ($tvehicule as $vehicule) {
@@ -37,5 +34,13 @@ const RC = "<br>";
 
     //----------GESTION DES PARCS-----------
 
-    echo "<h3> Liste des Vehicules dans le parc : </h3>";
-    ParcVehicules::AfficherParc() ;
+    // Affichage avec __toString()
+    echo "<h3>Liste des Véhicules dans le parc : </h3>";
+    ParcVehicules::AfficherParc();
+
+    echo RC;
+    echo RC;
+
+    // Affichage avec a fonction getParc()
+    echo "<h3>Liste des Véhicules dans le parc : </h3>";
+    ParcVehicules::getParc();

@@ -19,4 +19,12 @@ class Citadine extends Vehicule {
         return parent::__tostring() . "<br>" . "Autonomie citadine :  "  . $this->autonomie . " km ."; 
     }
 
+    public function getIdentifiant() : string {
+        return $this->$id;
+    }
+
+    public function getInfosCompletes() : string {
+        return "Marque : " . $this->marque . ", Modèle :" . $this->modele . ", Identifiant : " . $this->id . ", Autonomie : " . $this->autonomie;
+    }
+    
 }

@@ -20,4 +20,13 @@ class Utilitaire extends Vehicule {
     public function __tostring(): string {
         return parent::__tostring() . "<br>" . "Charge Utile :  "  . $this->ChargeUtile . " kg ."; 
     }
+    public function getIdentifiant() : string {
+        return $this->$id;
+    }
+
+    public function getInfosCompletes() : string {
+        return "Marque : " . $this->marque . ", Modèle :" . $this->modele . ", Identifiant : " . $this->id . ", Charge utile supportée : " . $this->ChargeUtile;
+    }
+
+    
 }
